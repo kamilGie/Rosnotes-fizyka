@@ -47,6 +47,11 @@ def craate_ai_sol(path):
     \\usepackage{{graphicx}}
     \\begin{{document}}
 
+    \\begin{{center}}
+        \\Large \\textbf{{ROZWIĄZANIE WYGENEROWANE PRZEZ CHAT GPT}}
+    \\end{{center}}
+    \\vspace{{1cm}}
+
     \\begin{{figure}}[h!]
         \\centering
         \\includegraphics[width=1\\textwidth]{{{path}}}
