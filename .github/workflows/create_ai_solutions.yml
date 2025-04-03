@@ -21,7 +21,7 @@ jobs:
         run: |
           pip3.10 install -r requirements.txt
           pip3.10 install openai
-      
+          brew install mactex-no-gui
 
       - name: Run ai_solutions.py with Secret Key
         run: |
