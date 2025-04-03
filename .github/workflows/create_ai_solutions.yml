@@ -19,7 +19,8 @@ jobs:
       
       - name: Install dependencies
         run: |
-         pip3.10 install -r requirements.txt
+          pip3.10 install -r requirements.txt
+          pip3.10 install openai
       
 
       - name: Run ai_solutions.py with Secret Key
