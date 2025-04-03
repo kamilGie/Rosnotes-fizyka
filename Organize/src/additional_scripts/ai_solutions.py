@@ -68,7 +68,7 @@ def craate_ai_sol(path):
     with open(output, "w") as f:
         f.write(latex_code)
 
-    desc_nr = str(path[-6:-4])
+    desc_nr = str(path)[-6:-4]
     output_folder = Path(Path(path).parent / desc_nr / "resources" / "pdfs")
 
     # Tworzenie folderu, jeśli nie istnieje
