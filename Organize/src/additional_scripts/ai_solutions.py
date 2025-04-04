@@ -1,3 +1,4 @@
+from logging import exception
 from openai import OpenAI
 import shutil
 from pathlib import Path
@@ -22,7 +23,7 @@ def craate_ai_sol(path):
     print(path)
 
     response = client.responses.create(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         input=[
             {
                 "role": "user",
@@ -92,4 +93,8 @@ def craate_ai_sol(path):
 
 for folder_set in Path("Solutions/").glob("Zestaw*"):
     for path in Path(folder_set).glob("desc_*"):
-        craate_ai_sol(path)
+        try:
+            craate_ai_sol(path)
+        except exception as e:
+            print(f"Nieudano {path}: przerywam")
+            break
