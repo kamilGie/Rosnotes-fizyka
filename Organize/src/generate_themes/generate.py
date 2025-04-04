@@ -142,19 +142,16 @@ def regenerate_theme(
                 with open(colors_file, "r") as f:
                     color = json.load(f)
                     theme.source_colors = np.array(color)
-
-                pdf_source = resources_path / "pdfs" / "source_raw.pdf"
-                if pdf_source.exists():
-                    with fitz.open(str(pdf_source)) as doc:
-                        theme.update_exercise(doc, resources_path / "pdfs")
-                else:
-                    print(
-                        f"\033[33m Ostrzezenie: Plik {pdf_source} nie istnieje \033[0m"
-                    )
             else:
-                # jest to odpowiedz stworzona przez ai nie ma motywów
-                pdf_source = resources_path / "pdfs" / "source_raw.pdf"
-                shutil.copy(pdf_source, pdf_source.parent / theme.theme)
+                print(f"\033[33m Ostrzezenie: Plik {colors_file} nie istnieje \033[0m")
+
+            # Otwieranie pliku PDF źródłowego
+            pdf_source = resources_path / "pdfs" / "source_raw.pdf"
+            if pdf_source.exists():
+                with fitz.open(str(pdf_source)) as doc:
+                    theme.update_exercise(doc, resources_path / "pdfs")
+            else:
+                print(f"\033[33m Ostrzezenie: Plik {pdf_source} nie istnieje \033[0m")
 
         # Jeśli mamy inicjalizację, przetwarzamy opis rozwiązania
         if is_init or no_sol_theme.exists():
