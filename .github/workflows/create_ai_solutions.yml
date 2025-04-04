@@ -21,7 +21,8 @@ jobs:
         run: |
           pip3.10 install -r requirements.txt
           pip3.10 install openai
-          brew install mactex-no-gui
+          brew install --cask mactex-no-gui
+          echo "/Library/TeX/texbin" >> $GITHUB_PATH
 
       - name: Run ai_solutions.py with Secret Key
         run: |
