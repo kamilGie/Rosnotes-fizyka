@@ -52,7 +52,7 @@ jobs:
               echo "Brak zmian w Solutions"
           else
               git pull # na wypadek gdyby uzytknik cos dodal w miedzy czasie
-              git commit -m "Dodaje readme"
+              git commit -m "Dodaje readme wygenerowane przez chat gpt"
               git push "https://x-access-token:${TOKEN_GITHUB}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
           fi
         shell: bash

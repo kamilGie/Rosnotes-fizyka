@@ -94,4 +94,3 @@ for folder_set in Path("Solutions/").glob("Zestaw*"):
     for path in Path(folder_set).glob("desc_*"):
         craate_ai_sol(path)
         break
-    break
