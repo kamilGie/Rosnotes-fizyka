@@ -28,7 +28,28 @@ def craate_ai_sol(path):
             {
                 "role": "user",
                 "content": [
-                    {"type": "input_text", "text": "rozwiaz mi to zadanie"},
+                    {
+                        "type": "input_text",
+                        "text": """Jestem studentem informatyki. Mam do rozwiązania to zadanie.
+
+Rozwiąż to zadanie krok po kroku, podając wszystkie wzory od podstawowych, przekształcając je logicznie aż do końcowego rozwiązania. Każdy krok powinien być dokładnie uzasadniony i wynikać bezpośrednio z poprzedniego.
+
+Zacznij od podania pełnych danych wejściowych, następnie pokaż:
+
+ogólny wzór,
+
+przekształcenie wzoru (jeśli potrzebne),
+
+podstawienie danych,
+
+przeliczenie krok po kroku,
+
+wynik końcowy z jednostką.
+
+Całość przedstaw w formacie LaTeX, stosując estetyczne formatowanie matematyczne (oddzielne bloki równań, wyrównanie, pogrubienie wyniku końcowego).
+
+Nie dodawaj żadnych dodatkowych sugestii, komentarzy, tłumaczeń, uproszczeń, wariantów ani podsumowań — wyłącznie rozwiąż zadanie zgodnie z powyższą strukturą.""",
+                    },
                     {
                         "type": "input_image",
                         "image_url": f"data:image/jpeg;base64,{base64_image}",
